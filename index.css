@@ -1,0 +1,48 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    background-color: black;
+}
+
+.logo{
+    width: 100px;
+    height: 80px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.order-container{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 15px;
+}
+.imge{
+    width: 200px;
+    height: 150px;
+    margin-right:  20px ;
+    border: 2px;
+    border-radius: 5px;
+}
+.product-name{
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.place{
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 20px;
+}
