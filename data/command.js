@@ -1,32 +1,32 @@
-let cart=[];
+let command=[];
   function saveToStorage() {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('command', JSON.stringify(command));
   }
  function UserPage(){
- function LoadCart(){
+ function LoadCommand(){
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('load',()=>{
     
-   cart=JSON.parse(xhr.response);
+   command=JSON.parse(xhr.response);
    saveToStorage();
-   cart.forEach(item => {
+   command.forEach(item => {
     console.log(`${item.productId}`)
    });
    html=Loadcommands();
    document.querySelector('.container').innerHTML=html;
    
-   return cart;
+   return command;
      })
     
     xhr.open('GET','https://backendgusto.onrender.com/article');
     xhr.send();
     }
-  LoadCart();
+  LoadCommand();
   }
   UserPage();
   let html='';
 function Loadcommands(){
-  cart.forEach((item)=>{
+  command.forEach((item)=>{
     products.forEach((product)=>{
       if(item.productId===product.id){
       html+=`<div class="order-container" >
