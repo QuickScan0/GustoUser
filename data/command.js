@@ -43,5 +43,6 @@ function Loadcommands(){
   return html;
 }
 }
-setInterval(CommandPage,3000);
-console.log('hello');
+function LiveReload(){
+setInterval(CommandPage,3000);}
+LiveReload();
