@@ -1,4 +1,6 @@
 let command=[];
+function CommandPage(){
+
   function saveToStorage() {
     localStorage.setItem('command', JSON.stringify(command));
   }
@@ -26,7 +28,7 @@ let command=[];
   UserPage();
   let html='';
 function Loadcommands(){
-  command.forEach((item)=>{
+  command.reverse().forEach((item)=>{
     products.forEach((product)=>{
       if(item.productId===product.id){
       html+=`<div class="order-container" >
@@ -40,3 +42,5 @@ function Loadcommands(){
   })
   return html;
 }
+}
+setInterval(CommandPage,3000);
