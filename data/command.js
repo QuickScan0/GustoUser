@@ -44,3 +44,4 @@ function Loadcommands(){
 }
 }
 setInterval(CommandPage,3000);
+console.log('hello');
