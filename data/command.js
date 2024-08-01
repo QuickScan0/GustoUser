@@ -11,9 +11,6 @@ function CommandPage(){
     
    command=JSON.parse(xhr.response);
    saveToStorage();
-   command.forEach(item => {
-    console.log(`${item.productId}`)
-   });
    html=Loadcommands();
    document.querySelector('.container').innerHTML=html;
    
@@ -27,22 +24,30 @@ function CommandPage(){
   }
   UserPage();
   let html='';
+  let html1='';
 function Loadcommands(){
   command.reverse().forEach((item)=>{
+    if(item.productId!='0'){
     products.forEach((product)=>{
       if(item.productId===product.id){
-      html+=`<div class="order-container" >
+      html=html+`<div class="order-container" >
     <img src="${product.image}" class="imge">
     <p class="product-name">${product.name}</p>
     <p class="product-name">Quantité:${item.quantity}</p>
     <p class="place">table:${item.place}</p>
+ </div>`}}
+      )}
+      else{
+        html=html+`<div class="order-container1" >
+    <p class="product-name">Appel au serveur</p>
+    <p class="place">table:${item.place}</p>
  </div>`
       }
-    })
-  })
-  return html;
+  }  )
+  
+  return html;}
 }
-}
+
 function LiveReload(){
 setInterval(CommandPage,3000);}
 LiveReload();
