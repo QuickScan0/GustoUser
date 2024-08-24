@@ -42,7 +42,7 @@ function Loadcommands(){
     <p class="product-name">Appel au serveur</p>
     <p class="place">table:${item.place}</p>
  </div>`
-      }
+      console.log(`${ item.articleId}`)}
   }  )
   
   return html;}
