@@ -59,3 +59,18 @@
     background-color: green;
     color: white;
 }
+.Delete-link{
+    width: 5%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.Deletee-link{
+    width: 5%;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    border-color: white;
+}

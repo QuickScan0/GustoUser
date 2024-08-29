@@ -30,23 +30,43 @@ function Loadcommands(){
     if(item.productId!='0'){
     products.forEach((product)=>{
       if(item.productId===product.id){
-      html=html+`<div class="order-container" >
+      html=html+`<div class="order-container .js-cart-item-${item.productId}" >
     <img src="${product.image}" class="imge">
     <p class="product-name">${product.name}</p>
     <p class="product-name">Quantité:${item.quantity}</p>
     <p class="place">table:${item.place}</p>
+    <button class="Delete-link"  onclick="
+    fetch('https://backendgusto.onrender.com/articles/${item._id}', {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json',
+    // Add any other necessary headers here
+  },})
+    ">Supp<button/>
  </div>`}}
       )}
       else{
         html=html+`<div class="order-container1" >
     <p class="product-name">Appel au serveur</p>
     <p class="place">table:${item.place}</p>
- </div>`
-      console.log(`${ item.articleId}`)}
+ 
+    <button class="Deletee-link"  onclick="
+    fetch('https://backendgusto.onrender.com/articles/${item._id}', {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json',
+    // Add any other necessary headers here
+  },})
+    ">Supp<button/>
+ </div>`;
+ 
+      }
   }  )
   
   return html;}
 }
+
+
 
 function LiveReload(){
 setInterval(CommandPage,3000);}
